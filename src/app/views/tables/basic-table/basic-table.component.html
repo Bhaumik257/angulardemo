@@ -1,0 +1,69 @@
+<div class="row mt-5">
+    <div class="col-md-12">
+        <!--Card-->
+        <label *ngIf="sessionService.ProfilePic" style="margin-bottom: 0px;float: right;"><img style="border-radius: 50px;" src="{{sessionService.ProfilePic}}"></label><br>
+        <label style="margin-bottom: 0px;">Logged In as: <span routerLink="../../profiles/profile1" style="color: #006ad2;font-weight: 400;cursor: pointer;">{{sessionService.UserName}}</span></label><br>
+        <label style="margin-bottom: 0px;">Role: <span style="color: #006ad2;font-weight: 400;">{{sessionService.Role}}</span></label><br>
+        <label style="margin-bottom: 0px;">Email: <span style="color: #006ad2;font-weight: 400;">{{sessionService.Email}}</span></label>
+        <!-- <label routerLink="../../profiles/profile1"><span style="color: #006ad2;font-weight: 400;text-decoration: underline;cursor: pointer;">View Profile Here</span></label> -->
+        <mdb-card cascade="true" narrower="true" class="mt-5">
+
+            <mdb-card-body>
+
+                <input style="padding: 8px!important;margin-right: 10px!important;" [(ngModel)]="itemId" type="text" placeholder="Item #" />
+                <!-- <input style="padding: 8px;margin-right: 10px;" [(ngModel)]="category" type="text" placeholder="Cetegory" /> -->
+                <!-- <select [(ngModel)]="category" style="padding: 10px!important;margin-right: 10px!important;">
+                    <option value=''>--Select Category--</option>
+                    <option value='apple 12'>Apple 12</option>
+                    <option value='apple'>Apple</option>
+                    <option value='PC'>PC</option>
+                </select> -->
+                <input style="padding: 8px!important;margin-right: 10px!important;" [(ngModel)]="category" type="text" placeholder="Cetegory" />
+                <input style="padding: 8px!important;margin-right: 10px!important;" [(ngModel)]="productName" type="text" placeholder="Product Name" />
+                <input style="padding: 8px!important;margin-right: 10px!important;" [(ngModel)]="productDescription" type="text" placeholder="Product Description" />
+                <input style="padding: 8px!important;margin-right: 10px!important;" [(ngModel)]="price" type="text" placeholder="Price" />
+                <button *ngIf="sessionService.Role === Roles.Admin" style="border: 1px solid #0d47a1!important;color: black!important;" class="btn btn-outline-white" (click)="saveUpdateProduct()" role="button">{{buttonName}}
+                </button>
+            </mdb-card-body>
+        </mdb-card>
+        <mdb-card cascade="true" narrower="true" class="mt-5">
+           
+            <mdb-card-body>
+                <table class="table">
+                    <thead class="mdb-color darken-3">
+                    <tr class="text-white">
+                        <th style="width: 10%!important;">Item #</th>
+                        <th style="width: 10%!important;">Category</th>
+                        <th style="width: 20%!important;">Product Name</th>
+                        <th style="width: 25%!important;">Product Description</th>
+                        <th style="width: 10%!important;">Price</th>
+                        <th style="width: 25%!important;">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of allProductList; let i = index">
+                        <th scope="row">{{item.itemId}}</th>
+                        <td>{{item.category}}</td>
+                        <td>{{item.productName}}</td>
+                        <td>{{item.productDescription}}</td>
+                        <td>${{item.price}}</td>
+                        <td>
+                            <button *ngIf="sessionService.Role === Roles.Admin" style="border: 1px solid #0d47a1!important;color: black!important;" class="btn btn-outline-white" (click)="editProduct(item.id)" role="button">Edit
+                                <!-- <mdb-icon fas icon="download" class="ml-2"></mdb-icon> -->
+                            </button>&nbsp;
+                            <button *ngIf="sessionService.Role === Roles.Admin" style="border: 1px solid #0d47a1!important;color:black!important ;" class="btn btn-outline-white" (click)="deleteProduct(item.id)" role="button">Delete
+                                <!-- <mdb-icon fas icon="download" class="ml-2"></mdb-icon> -->
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                    
+                </table>
+                
+
+            </mdb-card-body>
+            <!--/.Card content-->
+        </mdb-card>
+        <!--/.Card-->
+    </div>
+</div>

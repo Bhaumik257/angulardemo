@@ -1,0 +1,99 @@
+<!--Main Navigation-->
+<header>
+
+    <!-- Sidebar -->
+    <!-- <div class="sidebar-fixed position-fixed">
+
+        <a class="logo-wrapper waves-effect">
+            <img src="../../../../assets/img/angular-mdb.png" class="img-fluid" alt="">
+            <img src="data:image/png;base64,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" class="img-fluid" alt="">
+        </a>
+
+        <div class="list-group list-group-flush">
+
+            <a routerLink="tables/table1" routerLinkActive="active" class="list-group-item list-group-item-action waves-effect">
+                <mdb-icon fas icon="chart-pie" class="mr-3"></mdb-icon>My Cart
+            </a>
+            <a  routerLinkActive="active" class="list-group-item list-group-item-action waves-effect">
+                <mdb-icon fas icon="user" class="mr-3"></mdb-icon>My Products</a>
+            <a  routerLinkActive="active" class="list-group-item list-group-item-action waves-effect">
+                <mdb-icon fas icon="table" class="mr-3"></mdb-icon>Explore Others</a>
+            <a  routerLinkActive="active" class="list-group-item list-group-item-action waves-effect">
+                <mdb-icon far icon="map" class="mr-3"></mdb-icon>Maps</a>
+            <a routerLinkActive="active" class="list-group-item list-group-item-action waves-effect">
+                <mdb-icon fas icon="exclamation" class="mr-3"></mdb-icon>404</a>
+
+        </div>
+
+    </div> -->
+    <!-- Sidebar -->
+
+    <!--Navbar-->
+    <mdb-navbar [containerInside]="false" SideClass="navbar navbar-expand-lg navbar-light white">
+
+        <!-- Navbar brand -->
+        <logo class="ml-3">
+            <a class="navbar-brand" routerLink="mycart/cart1">
+               <span style="font-style :italic;"><b>demo</b><strong class="blue-text">site</strong></span> 
+            </a>
+        </logo>
+
+        <!-- Collapsible content -->
+        <links>
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <!-- <li class="nav-item active">
+                    <a class="nav-link" mdbWavesEffect>My Cart
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li> -->
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="https://mdbootstrap.com/angular/angular-bootstrap-getting-started/" target="_blank" mdbWavesEffect>About MDB</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://mdbootstrap.com/angular/getting-started/" target="_blank" mdbWavesEffect>Free download</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://mdbootstrap.com/angular/angular-tutorial/" target="_blank" mdbWavesEffect>Free tutorials</a>
+                </li> -->
+            </ul>
+            <!-- Links -->
+
+            <!-- Search form -->
+            <ul class="navbar-nav nav-flex-icons">
+                <li *ngIf="this.authService.isAuthenticated()" (click)="logout()" class="nav-item" style="font-size: 20px!important;">
+                    <a  routerLink="mycart/cart1" class="nav-link"  mdbWavesEffect>
+                      <b>Logout</b>
+                    </a>
+                </li>
+                    <!-- <li class="nav-item">
+                        <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank" mdbWavesEffect>
+                            <mdb-icon fab icon="facebook-f"></mdb-icon>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank" mdbWavesEffect>
+                            <mdb-icon fab icon="twitter"></mdb-icon>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light"
+                            target="_blank" mdbWavesEffect>
+                            <i class="fas fa-cart-arrow-down"></i>MDB GitHub
+                        </a>
+                        
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://mdbootstrap.com/products/angular-ui-kit/" class="ml-1 nav-link border border-light rounded" mdbWavesEffect>
+                            <mdb-icon far icon="gem" class=" left"></mdb-icon> Go Pro</a>
+                    </li> -->
+                </ul>
+        </links>
+        <!-- Collapsible content -->
+
+    </mdb-navbar>
+    <!--/.Navbar-->
+
+</header>
+<!--Main Navigation-->
